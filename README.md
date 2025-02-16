@@ -4,6 +4,8 @@
 
 This config is kida messy BTW, please tell me if I forgot something.
 
+<img src="https://raw.githubusercontent.com/yukiisen/Xdots/refs/heads/main/screenshot.png" />
+
 ## Applications:
 
 First Install these:
