@@ -78,7 +78,7 @@ call plug#end()
 
 " Plugins setup
 
-" colorscheme onedark
+colorscheme onedark
 
 set laststatus=2  " Always show the status bar
 set noshowmode
@@ -86,7 +86,7 @@ set noshowmode
 let g:airline_theme='onedark'
 let g:airline#extensions#branch#enabled = 1
 
-
+" Bottom bar config
 let g:airline_section_a = '%{mode()}'
 let g:airline_section_b = '%f'       " File name
 let g:airline_section_c = '%y'       " File type
@@ -95,7 +95,6 @@ let g:airline_section_y = '%{&fileformat}'    " Format (unix, dos, etc.)
 let g:airline_section_z = '%l:%c %p%%'  " Line:Column and Percentage
 
 " cursor config
-
 if exists('$TMUX')
     " In Tmux
     let &t_SI = "\e[5 q"   " Insert mode - Beam
@@ -113,7 +112,7 @@ endif
 let g:startify_enable_fortune = 0  " Disable the fortune quote
 let g:startify_padding_left = winwidth(0) / 3  " Center the menu
 
-
+" I was too lazy to get a new one..
 let g:ascii = [
             \ '                                 ________  __ __        ',
             \ '            __                  /\_____  \/\ \\ \       ',
