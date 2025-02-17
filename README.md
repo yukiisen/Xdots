@@ -10,7 +10,7 @@ This config is kida messy BTW, please tell me if I forgot something.
 
 First Install these:
 - Rofi (app launcher)
-- Picom (conpositor for X)
+- Picom (conpositor for X) (`picom-ftlabs-git` BTW)
 - Vim (optional)
 - fish (optional, bash alternative)
 - pywal (Supported on DWM, st and Rofi)
