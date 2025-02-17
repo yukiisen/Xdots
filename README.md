@@ -40,6 +40,11 @@ make
 sudo make install
 ```
 
+Add this line to your `.xinitrc` file:
+```bash
+echo "exec dwm" > ~/.xinitrc
+```
+
 Move `rofi-applet-apps.rasi` to `/usr/lib/python3.13/site-packages/pywal/templates` for pywal support.
 ```bash
 sudo mv ./rofi-applet-apps.rasi /usr/lib/python3.13/site-packages/pywal/templates/
