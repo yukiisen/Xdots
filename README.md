@@ -15,6 +15,7 @@ First Install these:
 - fish (optional, bash alternative)
 - pywal (Supported on DWM, st and Rofi)
 - Exa (alternative to `ls`, you can use `l` to run it if you apply the fish config)
+- xdotool (to apply dwm theme at startup)
 
 For Rofi install:
 - scrot (to take screenshots)
@@ -39,10 +40,11 @@ In the `dwm/` directory:
 make
 sudo make install
 ```
+Repeat for both `slstatus` and `st`.
 
 Add this line to your `.xinitrc` file:
 ```bash
-echo "exec dwm" > ~/.xinitrc
+echo "~/.scripts/start.sh && exec dwm" > ~/.xinitrc
 ```
 
 Move `rofi-applet-apps.rasi` to `/usr/lib/python3.13/site-packages/pywal/templates` for pywal support.

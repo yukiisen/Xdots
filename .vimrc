@@ -27,13 +27,16 @@ set incsearch
 set undofile
 
 " Keep 8 lines of space above and below the cursor
-set scrolloff=8
+set scrolloff=10
 
 " syntax highlighting
 syntax enable
 
 " language-specific settings
 filetype plugin indent on
+
+set showtabline=2
+
 
 " Vim-plug init
 
@@ -58,6 +61,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 
+Plug 'dylanaraps/wal.vim' " wal integration
+
 " status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -78,7 +83,7 @@ call plug#end()
 
 " Plugins setup
 
-colorscheme onedark
+colorscheme wal
 
 set laststatus=2  " Always show the status bar
 set noshowmode
@@ -86,7 +91,7 @@ set noshowmode
 let g:airline_theme='onedark'
 let g:airline#extensions#branch#enabled = 1
 
-" Bottom bar config
+
 let g:airline_section_a = '%{mode()}'
 let g:airline_section_b = '%f'       " File name
 let g:airline_section_c = '%y'       " File type
@@ -95,6 +100,7 @@ let g:airline_section_y = '%{&fileformat}'    " Format (unix, dos, etc.)
 let g:airline_section_z = '%l:%c %p%%'  " Line:Column and Percentage
 
 " cursor config
+
 if exists('$TMUX')
     " In Tmux
     let &t_SI = "\e[5 q"   " Insert mode - Beam
@@ -112,18 +118,42 @@ endif
 let g:startify_enable_fortune = 0  " Disable the fortune quote
 let g:startify_padding_left = winwidth(0) / 3  " Center the menu
 
-" I was too lazy to get a new one..
-let g:ascii = [
-            \ '                                 ________  __ __        ',
-            \ '            __                  /\_____  \/\ \\ \       ',
-            \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
-            \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
-            \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-            \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
-            \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
+
+let g:ascii = [  
+            \ '                                   ________  __ __        ',
+            \ '              __                  /\_____  \/\ \\ \       ',
+            \ '      __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
+            \ '     /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
+            \ '     \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
+            \ '      \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
+            \ '       \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
             \ ]
 
 let g:startify_custom_header =
           \ startify#pad(g:ascii)
 
+" Coc (LSP) config
+
+" Show documentation using (K key)
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+" select element using Enter key
 inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" Go to definition with gd
+nnoremap <silent> gd <Plug>(coc-definition)
+
+" Jump to previous/next error
+nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Commands
+command NTT NERDTreeToggle " toggle file explorer using :NTT
+command W T
+command! W w
+
+" Matching brackets, etc...
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>

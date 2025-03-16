@@ -86,7 +86,7 @@ static const char *screenshot[] = {"fish", "-c", ".config/rofi/applets/bin/scree
 static const char *rofi[] = {"fish", "-c", ".config/rofi/launchers/type-7/launcher.sh", NULL};
 static const char *powermenu[] = {"fish", "-c", ".config/rofi/powermenu/type-6/powermenu.sh", NULL};
 static const char *applet[] = {"fish", "-c", ".config/rofi/applets/bin/apps.sh", NULL};
-static const char *termcmd[] = {"fish", "-c", "st -e fish  &  wal -R -q ",
+static const char *termcmd[] = {"fish", "-c", "st  &  wal -R -q",
                                 NULL};
 
 #include "movestack.c"
