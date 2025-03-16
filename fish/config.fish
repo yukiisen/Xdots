@@ -11,3 +11,8 @@ alias wallpaper="~/.scripts/wallpaper.sh"
 set -Ux ANDROID_HOME $HOME/Android/Sdk
 
 set -U fish_user_paths $ANDROID_HOME/cmdline-tools/latest/bin $ANDROID_HOME/platform-tools $ANDROID_HOME/build-tools/34.0.0 $fish_user_paths
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+set --export TERM xterm-256color
