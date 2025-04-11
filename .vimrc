@@ -26,7 +26,7 @@ set incsearch
 " Save undo history even after leaving
 set undofile
 
-" Keep 8 lines of space above and below the cursor
+" Keep 10 lines of space above and below the cursor
 set scrolloff=10
 
 " syntax highlighting
@@ -35,7 +35,7 @@ syntax enable
 " language-specific settings
 filetype plugin indent on
 
-set showtabline=2
+" set showtabline=2
 
 
 " Vim-plug init
@@ -88,7 +88,7 @@ colorscheme wal
 set laststatus=2  " Always show the status bar
 set noshowmode
 
-let g:airline_theme='onedark'
+let g:airline_theme='wal'
 let g:airline#extensions#branch#enabled = 1
 
 
@@ -139,6 +139,9 @@ nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 " select element using Enter key
 inoremap <silent><expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
+nnoremap <silent> f  :Files<CR>
+nnoremap <silent> gf :GFiles<CR>
+nnoremap <silent> tt :tabe<CR>
 " Go to definition with gd
 nnoremap <silent> gd <Plug>(coc-definition)
 
