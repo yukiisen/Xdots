@@ -22,7 +22,7 @@ done
 pactl set-default-source VirtualSink.monitor
 
 echo "🐱 Audio streaming to SoundWire is set up!"
-
+exit 0
 soundwire-server &
 
 sleep 2
