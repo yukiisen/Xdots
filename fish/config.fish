@@ -13,6 +13,8 @@ if not set -q XDG_RUNTIME_DIR
     set -gx XDG_RUNTIME_DIR /run/user/(id -u)
 end
 
+alias play="mpv --ytdl-format=bestaudio -v --no-video"
+
 alias uwufetch="uwufetch --config ~/.config/uwufetch/config.conf"
 alias l="exa --icons --group-directories-first"
 alias start="~/.scripts/start.sh"
