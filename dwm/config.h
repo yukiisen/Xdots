@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 4;     /* snap pixel */
 static const unsigned int gappx = 10;   /* gaps between windows */
 static const int bar_height = 20; /* 2 is the default spacing around the bar*/
@@ -41,7 +41,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Gimp", NULL, NULL, 0, 1, -1},
-    {"Firefox", NULL, NULL, 1 << 8, 0, -1},
+    {"Firefox", NULL, NULL, 0, 0, -1},
 };
 
 /* layout(s) */
@@ -86,7 +86,8 @@ static const char *screenshot[] = {"fish", "-c", ".config/rofi/applets/bin/scree
 static const char *rofi[] = {"fish", "-c", ".config/rofi/launchers/type-7/launcher.sh", NULL};
 static const char *powermenu[] = {"fish", "-c", ".config/rofi/powermenu/type-6/powermenu.sh", NULL};
 static const char *applet[] = {"fish", "-c", ".config/rofi/applets/bin/apps.sh", NULL};
-static const char *termcmd[] = {"fish", "-c", "st  &  walrs -R -q", NULL};
+static const char *termcmd[] = {"fish", "-c", "st & wal -R -q", NULL};
+static const char *walcmd[] = {"fish", "-c","walrs -i ~/Pictures/Backgrounds/ && xdotool key Alt+n", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -101,6 +102,7 @@ static const Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = screenshot}},
     {WINKEY, XK_a, spawn, {.v = applet}},
     {WINKEY, XK_q, spawn, {.v = powermenu}},
+    {WINKEY, XK_w, spawn, {.v = walcmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_j, focusstack, {.i = +1}},

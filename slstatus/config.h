@@ -4,7 +4,7 @@
 const unsigned int interval = 1000;
 
 /* text to show if no value can be retrieved */
-static const char unknown_str[] = "n/a";
+static const char unknown_str[] = "N/A";
 
 /* maximum output string length */
 #define MAXLEN 2048
@@ -69,6 +69,6 @@ static const struct arg args[] = {
     {cpu_perc, "   %s% |", NULL},
     {keymap, "   %s |", NULL},
     {ram_used, "   %s |", NULL},
-    {wifi_essid, "   %s |", "wlan1"},
+    {wifi_essid, "   %s |", "wlp0s29u1u4"},
     {datetime, " 󱑃 %s ", "%T"},
 };

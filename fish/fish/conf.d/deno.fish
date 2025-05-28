@@ -1,0 +1,1 @@
+source "/home/yuki/.deno/env.fish"
