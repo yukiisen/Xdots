@@ -20,6 +20,7 @@ alias play="mpv --ytdl-format=bestaudio -v --no-video"
 alias l="exa --icons --group-directories-first"
 alias start="~/.scripts/start.sh"
 alias wallpaper="~/.scripts/wallpaper.sh"
+alias la="l -a"
 
 # mobile controls:
 alias voice+="adb shell input keyevent 24 & echo ok"
@@ -47,7 +48,7 @@ set -U fish_user_paths $ANDROID_HOME/cmdline-tools/latest/bin $ANDROID_HOME/plat
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 set --export PATH $HOME/go/bin $PATH
-set --export PKG_CONFIG_PATH /usr/local/lib/pkgconfig
+set --export PKG_CONFIG_PATH /usr/local/lib/pkgconfig $PKG_CONFIG_PATH
 set --export PKG_CONFIG_PATH /usr/lib/pkgconfig $PKG_CONFIG_PATH
 
 # enable this if xterm is not a known terminal type
@@ -69,4 +70,3 @@ function __complete_syncthing
     /usr/bin/syncthing
 end
 complete -f -c syncthing -a "(__complete_syncthing)"
-complete -c railway -s h -l help -d 'Print help'
