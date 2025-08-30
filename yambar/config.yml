@@ -1,0 +1,168 @@
+# Typical laptop setup, with wifi, brightness, battery etc, for
+# i3/Sway.
+
+# For X11/i3, you'll want to replace calls to swaymsg with i3-msg, and
+# the sway-xkb module with the xkb module.
+
+# fonts we'll be reusing here and there
+awesome: &awesome CaskaydiaMonoNerdFont:style=solid:pixelsize=14
+awesome_brands: &awesome_brands CaskaydiaMonoNerdFont:pixelsize=16
+
+std_underline: &std_underline {underline: { size: 2, color: ff0000ff}}
+
+# This is THE bar configuration
+bar:
+  height: 35
+  location: top
+  spacing: 5
+  margin: 10
+
+  # Default font
+  font: CaskaydiaMonoNerdFont:pixelsize=16
+
+  foreground: ffffffff
+  background: 111111cc
+
+  border:
+    width: 0
+    color: 999999cc
+    margin: 10
+    bottom-margin: 0
+    # top-margin: 15
+
+  left:
+    - i3:
+        anchors: # Not used (directly) by f00bar; used here to avoid duplication
+          - string: &i3_common {margin: 5, on-click: "swaymsg --quiet workspace {name}"}
+          - string: &default {<<: *i3_common, text: "{name}"}
+          - string: &main    {<<: *i3_common, text: , font: *awesome}
+          - string: &surfing {<<: *i3_common, text: , font: *awesome_brands}
+          - string: &misc    {<<: *i3_common, text: , font: *awesome}
+          - string: &mail    {<<: *i3_common, text: , font: *awesome}
+          - string: &music   {<<: *i3_common, text: , font: *awesome}
+          - focused: &focused
+              deco: {stack: [background: {color: ffa0a04c}, <<: *std_underline]}
+          - invisible: &invisible {foreground: ffffff55}
+          - urgent: &urgent
+              foreground: 000000ff
+              deco: {stack: [background: {color: bc2b3fff}, <<: *std_underline]}
+          - map: &i3_mode
+              default:
+                - string:
+                    margin: 5
+                    text: "{mode}"
+                    deco: {background: {color: cc421dff}}
+                - empty: {right-margin: 7}
+              conditions:
+                mode == default: {empty: {}}
+        content:
+          "":
+            map:
+              conditions:
+                state == focused:   {string: {<<: [*default, *focused]}}
+                state == unfocused: {string: {<<: *default}}
+                state == invisible: {string: {<<: [*default, *invisible]}}
+                state == urgent:    {string: {<<: [*default, *urgent]}}
+          main:
+            map:
+              conditions:
+                state == focused:   {string: {<<: [*main, *focused]}}
+                state == unfocused: {string: {<<: *main}}
+                state == invisible: {string: {<<: [*main, *invisible]}}
+                state == urgent:    {string: {<<: [*main, *urgent]}}
+          surfing:
+            map:
+              conditions:
+                state == focused: {string: {<<: [*surfing, *focused]}}
+                state == unfocused: {string: {<<: *surfing}}
+                state == invisible: {string: {<<: [*surfing, *invisible]}}
+                state == urgent:    {string: {<<: [*surfing, *urgent]}}
+          misc:
+            map:
+              conditions:
+                state == focused: {string: {<<: [*misc, *focused]}}
+                state == unfocused: {string: {<<: *misc}}
+                state == invisible: {string: {<<: [*misc, *invisible]}}
+                state == urgent:    {string: {<<: [*misc, *urgent]}}
+
+          mail:
+            map:
+              conditions:
+                state == focused: {string: {<<: [*mail, *focused]}}
+                state == unfocused: {string: {<<: *mail}}
+                state == invisible: {string: {<<: [*mail, *invisible]}}
+                state == urgent:    {string: {<<: [*mail, *urgent]}}
+          music:
+            map:
+              conditions:
+                state == focused: {string: {<<: [*music, *focused]}}
+                state == unfocused: {string: {<<: *music}}
+                state == invisible: {string: {<<: [*music, *invisible]}}
+                state == urgent:    {string: {<<: [*music, *urgent]}}
+  right:
+    - removables:
+        anchors:
+          drive: &drive { text: , font: *awesome}
+          optical: &optical {text: , font: *awesome}
+        spacing: 5
+        content:
+          map:
+            conditions:
+              ~mounted:
+                map:
+                  on-click: udisksctl mount -b {device}
+                  conditions:
+                    ~optical: [{string: *drive}, {string: {text: "{label}"}}]
+                    optical: [{string: *optical}, {string: {text: "{label}"}}]
+              mounted:
+                map:
+                  on-click: udisksctl unmount -b {device}
+                  conditions:
+                    ~optical:
+                      - string: {<<: *drive, deco: *std_underline}
+                      - string: {text: "{label}"}
+                    optical:
+                      - string: {<<: *optical, deco: *std_underline}
+                      - string: {text: "{label}"}
+    - sway-xkb:
+        identifiers: [1:1:AT_Translated_Set_2_keyboard]
+        content:
+            map:
+                default:
+                    - string: {text: " ", font: *awesome}
+                    - string: {text: "{layout} |"}
+                conditions:
+                    layout == "English (US)": {string: {text: "  us |"}}
+    - network:
+        poll-interval: 1000
+        content:
+          map:
+            default: {empty: {}}
+            conditions:
+              name == wlp0s29u1u4:
+                map:
+                  default: {string: {text: , font: *awesome, foreground: ffffff66}}
+                  conditions:
+                    state == down: {string: {text: , font: *awesome, foreground: ff0000ff}}
+                    state == up:
+                      map:
+                        default:
+                          - string: {text: "  ", font: *awesome}
+                          - string: {text: "{ssid} |"}
+
+                        conditions:
+                          ipv4 == "":
+                            - string: {text: "  ", font: *awesome, foreground: ffffff66}
+                            - string: {text: "{ssid} |", foreground: ffffff66}
+
+    - script: 
+        path: "/home/yuki/.scripts/mem.sh"
+        content:
+          - string: { text: "  {out} |", font: *awesome }
+    - clock:
+        time-format: "%H:%M:%S"
+        content:
+          # - string: {text: , font: *awesome}
+          # - string: {text: "{date}", right-margin: 5}
+          - string: {text: " ", font: *awesome}
+          - string: {text: "{time}"}

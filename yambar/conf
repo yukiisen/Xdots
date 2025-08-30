@@ -1,0 +1,12 @@
+bar:
+  height: 35
+  location: top
+  background: 000000ff
+
+  right:
+    - clock:
+        content:
+          - string: {text: , font: "JetBrains Mono:style=solid:size=20"}
+          - string: {text: "{date}", right-margin: 5,  font: "JetBrains Mono:style=solid:size=15"}
+          - string: {text: , font: "JetBrains Mono:style=solid:size=15"}
+          - string: {text: "{time}",  font: "JetBrains Mono:style=solid:size=15" }
