@@ -69,6 +69,6 @@ static const struct arg args[] = {
     {cpu_perc, "   %s% |", NULL},
     {keymap, "   %s |", NULL},
     {ram_used, "   %s |", NULL},
-    {wifi_essid, "   %s |", "wlp0s29u1u3"},
+    {wifi_essid, "   %s |", "wlp0s29u1u4"},
     {datetime, " 󱑃 %s ", "%T"},
 };

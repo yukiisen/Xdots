@@ -7,9 +7,11 @@ require("mason").setup();
 -- mason_lspconfig.setup_handlers({
 --     function (server)
 --         if server ~= "emmet_ls" and server ~= "lua_ls" and server ~= "rust_analyzer" then
---             lspconfig[server].setup({
---                 capabilities = capabilities,
---             });
+--             if lspconfig[server] ~= nil then
+--                 lspconfig[server].setup({
+--                     capabilities = capabilities,
+--                 });
+--             end
 --         end
 --     end,
 -- });
@@ -56,16 +58,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts);
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts);
     end
-})
-
-
-vim.diagnostic.config({
-    virtual_text = {
-        prefix = '●',  -- or '■', '▶', '>>', or "" for no prefix
-        spacing = 2,
-    },
-    signs = true,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = true,
 })

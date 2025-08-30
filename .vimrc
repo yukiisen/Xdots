@@ -74,7 +74,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 
 " a fancy welcome screen!!
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 " Selicolon and stuff
 Plug 'tpope/vim-surround'
@@ -115,22 +115,22 @@ endif
 
 " Startify config
  
-let g:startify_enable_fortune = 0  " Disable the fortune quote
-let g:startify_padding_left = winwidth(0) / 3  " Center the menu
+" let g:startify_enable_fortune = 0  " Disable the fortune quote
+" let g:startify_padding_left = winwidth(0) / 3  " Center the menu
 
 
-let g:ascii = [  
-            \ '                                   ________  __ __        ',
-            \ '              __                  /\_____  \/\ \\ \       ',
-            \ '      __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
-            \ '     /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
-            \ '     \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-            \ '      \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
-            \ '       \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
-            \ ]
+" let g:ascii = [  
+ "            \ '                                   ________  __ __        ',
+ "            \ '              __                  /\_____  \/\ \\ \       ',
+ "            \ '      __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
+ "            \ '     /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
+ "            \ '     \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
+ "            \ '      \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
+ "            \ '       \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
+ "            \ ]
 
-let g:startify_custom_header =
-          \ startify#pad(g:ascii)
+" let g:startify_custom_header =
+ "          \ startify#pad(g:ascii)
 
 " Coc (LSP) config
 

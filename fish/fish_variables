@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export ANDROID_HOME:/home/yuki/Android/Sdk
+SETUVAR --export ANDROID_HOME:/home/yuki/Android
 SETUVAR --export --path PATH:/home/yuki/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/yuki/Android/Sdk/platform\x2dtools\x1e/home/yuki/Android/Sdk/build\x2dtools/34\x2e0\x2e0\x1e/home/yuki/\x2ecargo/bin\x1e/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/usr/bin/site_perl\x1e/usr/bin/vendor_perl\x1e/usr/bin/core_perl
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:brblack

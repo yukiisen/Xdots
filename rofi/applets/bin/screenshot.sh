@@ -66,7 +66,8 @@ run_rofi() {
 
 # Screenshot
 time=$(date +%Y-%m-%d-%H-%M-%S)
-dir="$(xdg-user-dir PICTURES)/Screenshots"
+dir="$HOME/Pictures/Screenshots"
+dir="$HOME/Sync/rice"
 file="Screenshot_${time}.png"
 
 if [[ ! -d "$dir" ]]; then
@@ -75,7 +76,7 @@ fi
 
 # notify and view screenshot
 notify_view() {
-  notify_cmd_shot='dunstify -u low --replace=699'
+  notify_cmd_shot='pino --title Screenshot --message'
   ${notify_cmd_shot} "Copied to clipboard."
   viewnior ${dir}/"$file"
   if [[ -e "$dir/$file" ]]; then
@@ -92,14 +93,14 @@ copy_shot() {
 
 # take shots
 shotnow() {
-  scrot ${dir}/${file}
+  scrot ${dir}/${file} -p
   copy_shot
   notify_view
 }
 
 shot5() {
   sleep 5
-  scrot ${dir}/${file}
+  scrot ${dir}/${file} -p
   copy_shot
   notify_view
 }
@@ -119,7 +120,7 @@ shotwin() {
 
 shotarea() {
   sleep 2
-  scrot ${dir}/${file} -s
+  scrot ${dir}/${file} -s -f
   copy_shot
   notify_view
 }

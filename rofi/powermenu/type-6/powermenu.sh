@@ -66,11 +66,11 @@ run_cmd() {
     if [[ $1 == '--shutdown' ]]; then
       systemctl poweroff
     elif [[ $1 == '--reboot' ]]; then
-      systemctl reboot
+      doas reboot
     elif [[ $1 == '--hibernate' ]]; then
       systemctl hibernate
     elif [[ $1 == '--suspend' ]]; then
-      systemctl suspend
+      doas zzz
     elif [[ $1 == '--logout' ]]; then
       if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
         openbox --exit

@@ -11,7 +11,7 @@ theme="$type/$style"
 
 # Theme Elements
 prompt='Applications'
-mesg="Installed Packages : $(pacman -Q | wc -l) (pacman)"
+mesg="Installed Packages : $(xbps-query -l | wc -l) (xbps)"
 
 if [[ ("$theme" == *'type-1'*) || ("$theme" == *'type-3'*) || ("$theme" == *'type-5'*) ]]; then
   list_col='1'
@@ -22,10 +22,10 @@ elif [[ ("$theme" == *'type-2'*) || ("$theme" == *'type-4'*) ]]; then
 fi
 
 # CMDs (add your apps here)
-term_cmd='st -e fish & wal -R -q'
+term_cmd='st -e fish && wal -R -q'
 file_cmd='st -e spf'
 text_cmd='st -e nvim'
-web_cmd='min'
+web_cmd='librewolf'
 music_cmd='spotify'
 setting_cmd=''
 

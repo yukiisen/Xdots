@@ -1,8 +1,10 @@
-# Xdots
+# Xdots (and WLdots as well)
 
 **My config files ._.**
 
 This config is kida messy BTW, please tell me if I forgot something.
+
+**Note:** The swayfx config is not completed so make sure to tweak it a little, I'll include it later once I feel like switching.
 
 <img src="https://raw.githubusercontent.com/yukiisen/Xdots/refs/heads/main/screenshot.png" />
 
@@ -10,7 +12,7 @@ This config is kida messy BTW, please tell me if I forgot something.
 
 First Install these:
 - Rofi (app launcher)
-- Picom (conpositor for X) (`picom-ftlabs-git` BTW)
+- Picom (conpositor for X) (`picom-ftlabs-git` BTW if you want picom.conf.def (animation))
 - Vim (optional)
 - fish (optional, bash alternative)
 - pywal (Supported on DWM, st and Rofi)
@@ -54,7 +56,7 @@ sudo mv ./rofi-applet-apps.rasi /usr/lib/python3.13/site-packages/pywal/template
 
 Finally move the `wallpaper.sh` and `start.sh` files to the `~/.scripts/` directory. (optional)
 
-Now run `startx` and press `Alt+ENTER` to open `st` then type `start` to run all other tools, then press `Alt+n` to update DWM's colors.
+Now run `startx` and press `Alt+ENTER` to open `st` then type `start` to run all other tools, then press `Alt+n` to update DWM's colors. (automated now)
 
 ## Shortcuts:
 
@@ -63,6 +65,7 @@ Now run `startx` and press `Alt+ENTER` to open `st` then type `start` to run all
 - `Alt+q`         Close Window
 - `Alt+[1-9]`     Move to workspace
 - `Alt+n`         Refresh colors after running pywal.
+- `Alt+Shift+q`   Kill the current dwm instance.
 - `Super+a`       Quick access (Change the config to your preferred apps)
 - `Super+q`       Power Menu
 - `Super+[1-9]`   Move window to workspace

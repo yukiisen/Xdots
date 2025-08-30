@@ -1,0 +1,74 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "st.c"
+    ],
+    "directory": "/home/yuki/Documents/clones/xdots/st",
+    "file": "/home/yuki/Documents/clones/xdots/st/st.c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "x.c"
+    ],
+    "directory": "/home/yuki/Documents/clones/xdots/st",
+    "file": "/home/yuki/Documents/clones/xdots/st/x.c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "rowcolumn_diacritics_helpers.c"
+    ],
+    "directory": "/home/yuki/Documents/clones/xdots/st",
+    "file": "/home/yuki/Documents/clones/xdots/st/rowcolumn_diacritics_helpers.c"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-std=c99",
+      "-I/usr/X11R6/include",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-DVERSION=\"0.9.2\"",
+      "-D_XOPEN_SOURCE=600",
+      "-O1",
+      "-c",
+      "graphics.c"
+    ],
+    "directory": "/home/yuki/Documents/clones/xdots/st",
+    "file": "/home/yuki/Documents/clones/xdots/st/graphics.c"
+  }
+]

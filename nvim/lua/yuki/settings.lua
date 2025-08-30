@@ -7,6 +7,23 @@ function setup ()
     vim.api.nvim_set_keymap('n', 'tt', '<Cmd>tabnew<CR>', { noremap = true, silent = true });
 
 
+    vim.keymap.set('n', 'm', function()
+        vim.diagnostic.open_float(nil, { focus = false, border = "rounded" });
+    end, { noremap = true, silent = true });
+
+
+
+    vim.diagnostic.config({
+        virtual_text = {
+            prefix = '●',  -- or '■', '▶', '>>', or "" for no prefix
+            spacing = 2,
+        },
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+    })
+
     -- my settings
 
     vim.cmd.colorscheme("wal");
@@ -34,9 +51,9 @@ function setup ()
 
     -- Scrolling settings
     vim.o.scrolloff = 10
+
     vim.cmd("syntax enable")
     vim.cmd("filetype plugin indent on")
-end 
-
+end
 
 return setup;
