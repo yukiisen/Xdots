@@ -10,4 +10,4 @@ cp ~/.config/yambar/ ./ -r
 cp ~/.scripts/* ./scripts/
 cp ~/.vimrc ./
 cp ~/.tmux.conf ./
-cp ~/.xinitrc ./xinitrc
+cp ~/.xinitrc ./.xinitrc

@@ -12,12 +12,13 @@ This config is kida messy BTW, please tell me if I forgot something.
 
 First Install these:
 - Rofi (app launcher)
-- Picom (conpositor for X) (`picom-ftlabs-git` BTW if you want picom.conf.def (animation))
+- Picom (compositor for X) (`picom-ftlabs-git` BTW if you want picom.conf.def (animation))
 - Vim (optional)
 - fish (optional, bash alternative)
-- pywal (Supported on DWM, st and Rofi)
+- pywal (Supported on DWM, st and Rofi) (likley everywhere)
 - Exa (alternative to `ls`, you can use `l` to run it if you apply the fish config)
 - xdotool (to apply dwm theme at startup)
+- feh/xwallpaper.
 
 For Rofi install:
 - scrot (to take screenshots)
@@ -30,6 +31,12 @@ For video as wallpaper install:
 You can find all of them on `pacman` or `yay` or the package manager of your distro.
 
 **Don't forget to install X11 libs ._.**
+
+## Fonts:
+The following fonts are required:
+- Jetbrains Mono Nerd Font (st/foot)
+- Caskaydia Mono Nerd Font (dwm/slstatus)
+- Feather (rofi)
 
 ## Setup:
 
