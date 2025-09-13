@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static const char *font = "Jetbrains Mono:size=11:style=Bold";
+static const char *font = "Jetbrains Mono:size=10:style=Bold";
 /* Spare fonts */
 static char *font2[] = {
     "Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true"};

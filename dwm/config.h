@@ -3,12 +3,12 @@
 /* appearance */
 static const unsigned int borderpx = 0; /* border pixel of windows */
 static const unsigned int snap = 4;     /* snap pixel */
-static const unsigned int gappx = 10;   /* gaps between windows */
+static const unsigned int gappx = 15;   /* gaps between windows */
 static const int bar_height = 20; /* 2 is the default spacing around the bar*/
-static const int showbar = 1;    /* 0 means no bar */
+static const int showbar = 0;    /* 0 means no bar */
 static const int topbar = 1;     /* 0 means bottom bar */
-static const char *fonts[] = {"CaskaydiaMonoNerdFont-Bold:size=10"};
-static const char dmenufont[] = "CaskaydiaMonoNerdFont-Bold:size=13";
+static const char *fonts[] = {"CaskaydiaMonoNerdFont-Bold:size=8"};
+static const char dmenufont[] = "CaskaydiaMonoNerdFont-Bold:size=8";
 static char normbgcolor[] = "#222222";
 static char normbordercolor[] = "#444444";
 static char normfgcolor[] = "#bbbbbb";
@@ -82,12 +82,12 @@ static char dmenumon[2] =
 static const char *dmenucmd[] = {"dmenu_run", "-fn", dmenufont,   "-nb",
                                  normbgcolor, "-nf", selfgcolor,  "-sb",
                                  selbgcolor,  "-sf", normbgcolor, NULL};
-static const char *screenshot[] = {"fish", "-c", ".config/rofi/applets/bin/screenshot.sh", NULL};
-static const char *rofi[] = {"fish", "-c", ".config/rofi/launchers/type-7/launcher.sh", NULL};
-static const char *powermenu[] = {"fish", "-c", ".config/rofi/powermenu/type-6/powermenu.sh", NULL};
-static const char *applet[] = {"fish", "-c", ".config/rofi/applets/bin/apps.sh", NULL};
-static const char *termcmd[] = {"fish", "-c", "st & wal -R -q", NULL};
-static const char *walcmd[] = {"fish", "-c","walrs -i ~/Pictures/Backgrounds/ && xdotool key Alt+n", NULL};
+static const char *screenshot[] = {"bash", "-c", ".config/rofi/applets/bin/screenshot.sh", NULL};
+static const char *rofi[] = {"bash", "-c", ".config/rofi/launchers/type-7/launcher.sh", NULL};
+static const char *powermenu[] = {"bash", "-c", ".config/rofi/powermenu/type-6/powermenu.sh", NULL};
+static const char *applet[] = {"bash", "-c", ".config/rofi/applets/bin/apps.sh", NULL};
+static const char *termcmd[] = {"bash", "-c", "st & wal -R -q", NULL};
+static const char *walcmd[] = {"bash", "-c","walrs -i ~/Pictures/Backgrounds/ && xdotool key Alt+n", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
