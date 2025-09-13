@@ -26,7 +26,10 @@ function osu
     sleep 1800 && pkill osu
 end
 
+bass "eval \$(luarocks path --bin)"
+
 alias uwufetch="uwufetch --config ~/.config/uwufetch/config"
+alias anipb="lua ~/.scripts/anime_girls.lua"
 
 alias rcli="redis-cli"
 alias rtui="redis_tui"
